@@ -7,6 +7,8 @@ public class User {
     private int age;
     private String profilePicUrl;
 
+    private int userId;
+
     public User(String name, String address, int age, String profilePicUrl) {
         this.name = name;
         this.address = address;
@@ -36,6 +38,14 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getProfilePicUrl() {
