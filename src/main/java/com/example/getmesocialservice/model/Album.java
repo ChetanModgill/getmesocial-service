@@ -13,6 +13,13 @@ public class Album {
         this.coverPicUrl = coverPicUrl;
     }
 
+    public int getAlbumId() {
+        return albumId;
+    }
+
+    public void setAlbumId(int albumId) {
+        this.albumId = albumId;
+    }
 
     public String getName() {
         return name;

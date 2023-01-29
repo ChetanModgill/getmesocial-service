@@ -37,4 +37,6 @@ public class UserResource {
     {
         return userService.getUserById(userId);
     }
+
+
 }
