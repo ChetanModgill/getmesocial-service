@@ -12,10 +12,9 @@ public class AlbumRepository {
 
     List<Album> albumList = new ArrayList<>();
     public Album getAlbum() {
-        Album album = new Album("Sidhu","Best Singer", "will soon");
+        Album album = new Album("Sidhu", "Punjabi Rapper","https://voiceonline.com/wp-content/uploads/2022/05/MOOSE-Tw.jpg");
         return album;
     }
-
     public Album getAlbumById(int albumId) {
 
         for(Album album: albumList){
@@ -60,6 +59,9 @@ public class AlbumRepository {
                 return deletedAlbum;
             }
         }
-        return deletedAlbum;
+        return null;
     }
+
+
+
 }

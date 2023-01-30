@@ -1,13 +1,12 @@
 package com.example.getmesocialservice.model;
 
 public class Album {
-
     private int albumId;
     private String name;
     private String description;
     private String coverPicUrl;
 
-    public Album( String name, String description, String coverPicUrl) {
+    public Album(String name, String description, String coverPicUrl) {
         this.name = name;
         this.description = description;
         this.coverPicUrl = coverPicUrl;
