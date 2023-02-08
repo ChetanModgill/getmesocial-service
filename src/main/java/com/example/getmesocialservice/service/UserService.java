@@ -12,20 +12,37 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    public User saveUser(User user) {
+
+        return userRepository.save(user);
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public User updateUser(User user){
+        return userRepository.save(user);
+    }
+
+    public void deleteUser(String id){
+        userRepository.deleteById(id);
+    }
+
+    public List<User> getByEmail(String email) {
+        return userRepository.findAllByEmail(email);
+    }
+    /*
     public User getUser(){
         return userRepository.getUser();
     }
 
-    public User saveUser(User user) {
 
-        return userRepository.saveUser(user);
-    }
 
-    public List<User> getAllUsers() {
-        return userRepository.getAllUsers();
-    }
+
 
     public User getUserById(int userId) {
         return userRepository.getUserById(userId);
-    }
+    }*/
 }
