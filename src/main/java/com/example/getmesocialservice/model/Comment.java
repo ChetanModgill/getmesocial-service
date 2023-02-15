@@ -1,12 +1,19 @@
 package com.example.getmesocialservice.model;
 
+import com.example.getmesocialservice.validation.ValidCreatedBy;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.aggregation.AccumulatorOperators;
+
+import javax.validation.constraints.Min;
 
 public class Comment {
     @Id
     private String id;
     private String photoId;
+    @Length(min = 5)
     private String message;
+    @ValidCreatedBy
     private String createdBy;
     private String dateCreated;
 

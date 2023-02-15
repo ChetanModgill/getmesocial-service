@@ -2,17 +2,23 @@ package com.example.getmesocialservice.model;
 
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 public class User {
 
     @Id
     private String id;
     private String name;
-    private String Email;
+    @Email(message = "Use proper Email Format")
+    private String email;
+    @NotEmpty(message = "ProfilePhotoUrl can not be empty")
     private String profilePhotoUrl;
 
-    public User(String name, String email, String profilePhotoUrl) {
+    public User(String id, String name, String email, String profilePhotoUrl) {
+        this.id = id;
         this.name = name;
-        this.Email = email;
+        this.email = email;
         this.profilePhotoUrl = profilePhotoUrl;
     }
 
@@ -33,11 +39,11 @@ public class User {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        this.Email = email;
+        this.email = email;
     }
 
     public String getProfilePhotoUrl() {

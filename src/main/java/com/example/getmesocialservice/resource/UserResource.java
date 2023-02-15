@@ -1,19 +1,21 @@
 package com.example.getmesocialservice.resource;
 
+import com.example.getmesocialservice.exception.RestrictedInfoException;
 import com.example.getmesocialservice.model.User;
 import com.example.getmesocialservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/user")
 public class UserResource {
     @Autowired
     private UserService userService;
     @PostMapping
-    public User saveUser(@RequestBody User user)
+    public User saveUser(@Valid @RequestBody User user)
     {
         return userService.saveUser(user);
 
@@ -25,7 +27,7 @@ public class UserResource {
     }
 
     @PutMapping
-    public User updateuser(@RequestBody User user)
+    public User updateuser(@Valid @RequestBody User user)
     {
         return userService.updateUser(user);
     }
@@ -36,8 +38,13 @@ public class UserResource {
     }
 
     @GetMapping("/find")
-    public List<User> getByAddress(@RequestParam(name="email") String email){
-       return userService.getByEmail(email);
+    public List<User> getByName(@RequestParam(name="name") String name) throws RestrictedInfoException
+    {
+        if(name.equalsIgnoreCase("root")){
+            throw new RestrictedInfoException();
+        }
+        return userService.getByName(name);
+
     }
 
     /*

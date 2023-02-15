@@ -30,8 +30,8 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public List<User> getByEmail(String email) {
-        return userRepository.findAllByEmail(email);
+    public List<User> getByName(String name) {
+        return userRepository.findAllByName(name);
     }
     /*
     public User getUser(){
