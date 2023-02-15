@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RestrictedInfoException.class)
     public ResponseEntity<String> restrictedInfoError(RestrictedInfoException ex){
-        return new ResponseEntity<String>("No Idea", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(NoSuchElementException.class)
