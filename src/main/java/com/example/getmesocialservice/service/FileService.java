@@ -46,7 +46,7 @@ public class FileService {
         final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSCredentialsProvider() {
             @Override
             public AWSCredentials getCredentials() {
-                return new BasicAWSCredentials("AKIAYEDAMKMKKX2BAMGF", "ruWVLUzVx/dA9zlg5P7m8jBvZ7+d12R71soRlLhO");
+                return new BasicAWSCredentials("AKIAYEDAMKMKGQYB5QP5", "Rj8oMpRwC+2kB+UL1jTMEvS/ds3Vmic4luMyGDuG");
             }
 
             @Override
@@ -61,7 +61,7 @@ public class FileService {
         final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSCredentialsProvider() {
             @Override
             public AWSCredentials getCredentials() {
-                return new BasicAWSCredentials("AKIAYEDAMKMKKX2BAMGF", "ruWVLUzVx/dA9zlg5P7m8jBvZ7+d12R71soRlLhO");
+                return new BasicAWSCredentials("AKIAYEDAMKMKGQYB5QP5", "Rj8oMpRwC+2kB+UL1jTMEvS/ds3Vmic4luMyGDuG");
             }
 
             @Override
