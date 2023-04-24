@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://chetanphotoapp.s3-website.us-east-2.amazonaws.com/")
 @RestController
 @RequestMapping("/api/album")
 public class AlbumResource {
