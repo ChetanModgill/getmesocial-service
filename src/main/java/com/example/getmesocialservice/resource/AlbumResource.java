@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/album")
 public class AlbumResource {
 
@@ -28,7 +30,6 @@ public class AlbumResource {
     public List<Album> getAllAlbums(){
         return albumService.getAllAlbums();
     }
-
 
 
     @GetMapping("/id")
