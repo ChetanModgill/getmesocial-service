@@ -33,6 +33,10 @@ public class  UserService {
     public List<User> getByName(String name) {
         return userRepository.findAllByName(name);
     }
+
+    public List<User> getUserById(String userId) {
+        return userRepository.findAllById(userId);
+    }
     /*
     public User getUser(){
         return userRepository.getUser();
