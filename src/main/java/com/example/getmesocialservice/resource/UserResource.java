@@ -48,7 +48,7 @@ public class UserResource {
 
     }
 
-    @GetMapping("/user")
+    @GetMapping("me")
 
     public List<User> getUserById(@RequestParam(name = "id") String id)
     {
