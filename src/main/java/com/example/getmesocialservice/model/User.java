@@ -11,15 +11,23 @@ public class User {
     private String id;
     private String name;
     @Email(message = "Use proper Email Format")
-    private String email;
+    private String emailAddress;
     @NotEmpty(message = "ProfilePhotoUrl can not be empty")
     private String profilePhotoUrl;
 
-    public User(String id, String name, String email, String profilePhotoUrl) {
+    public User(String id, String name, String emailAddress, String profilePhotoUrl) {
         this.id = id;
         this.name = name;
-        this.email = email;
+        this.emailAddress = emailAddress;
         this.profilePhotoUrl = profilePhotoUrl;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     public String getId() {
@@ -36,14 +44,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getProfilePhotoUrl() {

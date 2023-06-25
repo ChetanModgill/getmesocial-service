@@ -34,8 +34,8 @@ public class  UserService {
         return userRepository.findAllByName(name);
     }
 
-    public List<User> getUserById(String userId) {
-        return userRepository.findAllById(userId);
+    public List <User> getUserById(String id) {
+        return userRepository.findAllById(id);
     }
     /*
     public User getUser(){
