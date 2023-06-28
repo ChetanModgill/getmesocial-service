@@ -61,7 +61,12 @@ public class UserResource {
 
     public List<User> getUserById(@RequestHeader(name = "idToken") String idToken) throws IOException, FirebaseAuthException {
         FirebaseUser firebaseUser = firebaseService.authentication(idToken);
+        if (firebaseUser!= null){
+            return userService.getUserByEmail(firebaseUser.getEmail());
+        }
+        else {
             return userService.getUserById(idToken);
+        }
     }
 
     /*
