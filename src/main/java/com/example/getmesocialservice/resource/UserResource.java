@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "http://18.221.84.3:8080" )
+@CrossOrigin(origins = "http://18.191.35.122:8080" )
 public class UserResource {
     @Autowired
     private UserService userService;
