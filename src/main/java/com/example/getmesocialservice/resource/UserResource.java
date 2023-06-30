@@ -13,21 +13,19 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
+@CrossOrigin(origins = "http://chetanphotoapp.s3-website.us-east-2.amazonaws.com/")
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "http://localhost:4200" )
+
 public class UserResource {
     @Autowired
     private UserService userService;
     @Autowired
     private FirebaseService firebaseService;
-    @PostMapping
-    public User saveUser(@Valid @RequestBody User user, @RequestHeader(name = "idToken") String idToken) throws IOException, FirebaseAuthException {
-        FirebaseUser firebaseUser = firebaseService.authentication(idToken);
-        if(firebaseUser != null){
+    @PostMapping("/register")
+    public User saveUser(@Valid @RequestBody User user){
+
             return userService.saveUser(user);
-        }
-        return null;
     }
 
     @GetMapping
